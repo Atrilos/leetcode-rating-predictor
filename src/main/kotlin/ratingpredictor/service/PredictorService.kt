@@ -2,9 +2,10 @@ package ratingpredictor.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import lombok.RequiredArgsConstructor
-import lombok.extern.slf4j.Slf4j
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import ratingpredictor.dto.ParticipantDto
 import ratingpredictor.dto.ParticipantsWithCountDto
@@ -12,8 +13,11 @@ import ratingpredictor.exceptions.WrongContestNameException
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 class PredictorService(private val objectMapper: ObjectMapper) {
+    companion object {
+        private val log: Logger = LoggerFactory.getLogger(this::class.java)
+    }
+
     private val baseUrl = "https://leetcode.com"
 
     fun readContestResultsIntoDB(contestName: String) {

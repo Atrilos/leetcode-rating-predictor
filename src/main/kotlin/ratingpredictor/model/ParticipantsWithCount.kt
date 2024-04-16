@@ -1,7 +1,7 @@
-package ratingpredictor.entity
+package ratingpredictor.model
 
 import jakarta.persistence.*
-import ratingpredictor.entity.embeddable.ContestNamePage
+import ratingpredictor.model.embeddable.ContestNamePage
 
 @Entity
 @Table(name = "participant_with_count")

@@ -2,7 +2,7 @@ package ratingpredictor.dto;
 
 import lombok.Builder;
 import lombok.Value;
-import ratingpredictor.entity.Participant;
+import ratingpredictor.model.Participant;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package ratingpredictor.entity.embeddable
+package ratingpredictor.model.embeddable
 
 import jakarta.persistence.Column
 import jakarta.persistence.Embeddable

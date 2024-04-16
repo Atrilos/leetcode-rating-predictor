@@ -1,4 +1,4 @@
-package ratingpredictor.entity
+package ratingpredictor.model
 
 import jakarta.persistence.*
 import lombok.ToString
@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j
 import org.hibernate.Hibernate
 import org.hibernate.annotations.JdbcTypeCode
 import org.hibernate.type.SqlTypes
-import ratingpredictor.entity.embeddable.ContestUser
+import ratingpredictor.model.embeddable.ContestUser
 import java.util.*
 
 @Entity
