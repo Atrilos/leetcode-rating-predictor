@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5430/ratingpredictor
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  jackson:
+    serialization:
+      indent-output: true
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug

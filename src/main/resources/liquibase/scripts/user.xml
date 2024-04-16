@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog>
+<!--        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"-->
+<!--        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-->
+<!--                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">-->
+<!--    <changeSet id="1" author="atrilos">-->
+<!--        <update tableName="users">-->
+<!--            <column name="role" value="USER"/>-->
+<!--            <where>role is null</where>-->
+<!--        </update>-->
+<!--    </changeSet>-->
+<!--    <changeSet id="2" author="atrilos">-->
+<!--        <addDefaultValue tableName="users" columnName="role" defaultValue="USER"/>-->
+<!--    </changeSet>-->
+<!--    <changeSet id="3" author="atrilos">-->
+<!--        <update tableName="users">-->
+<!--            <column name="role" value="ROLE_USER"/>-->
+<!--            <where>role='USER'</where>-->
+<!--        </update>-->
+<!--    </changeSet>-->
+</databaseChangeLog>
