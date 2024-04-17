@@ -2,20 +2,19 @@ package ratingpredictor.dto;
 
 import lombok.Builder;
 import lombok.Value;
-import ratingpredictor.model.ParticipantsWithCount;
+import ratingpredictor.model.Contest;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * DTO for {@link ParticipantsWithCount}
+ * DTO for {@link Contest}
  */
 @Value
 @Builder
-public class ParticipantsWithCountDto implements Serializable {
+public class ContestDto implements Serializable {
     String contestName;
-    Integer pageNum;
     @Builder.Default
     ArrayList<ParticipantDto> participants = new ArrayList<>();
-    Integer userNum;
+    Double time;
 }

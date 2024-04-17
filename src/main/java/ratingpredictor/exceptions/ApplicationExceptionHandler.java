@@ -16,4 +16,15 @@ public class ApplicationExceptionHandler {
         response.sendError(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
     }
 
+    @ExceptionHandler(TooManyRequestsException.class)
+    public void handleTooManyRequestsException(TooManyRequestsException ex,
+                                                 HttpServletResponse response) throws IOException {
+        response.sendError(HttpStatus.TOO_MANY_REQUESTS.value(), ex.getMessage());
+    }
+
+    @ExceptionHandler(NetworkException.class)
+    public void handleNetworkException(NetworkException ex,
+                                               HttpServletResponse response) throws IOException {
+        response.sendError(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
+    }
 }

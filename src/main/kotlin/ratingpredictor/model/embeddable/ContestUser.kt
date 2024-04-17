@@ -7,8 +7,8 @@ import java.util.*
 
 @Embeddable
 open class ContestUser {
-    @Column(name = "contest_id", nullable = false)
-    open var contestId: Int? = null
+    @Column(name = "contest_name", nullable = false)
+    open var contestName: String? = null
     @Column(name = "username", nullable = false)
     open var username: String? = null
 
@@ -18,10 +18,10 @@ open class ContestUser {
 
         other as ContestUser
 
-        return contestId == other.contestId && username == other.username
+        return contestName == other.contestName && username == other.username
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(contestId, username)
+        return Objects.hash(contestName, username)
     }
 }

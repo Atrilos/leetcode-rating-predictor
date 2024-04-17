@@ -12,9 +12,10 @@ import java.io.Serializable;
 @Value
 @Builder
 public class ParticipantDto implements Serializable {
-    Integer contestId;
+    String contestName;
     String username;
+    String region;
     Integer rank;
     Integer score;
-    Long finishTime;
+    Double finishTime;
 }

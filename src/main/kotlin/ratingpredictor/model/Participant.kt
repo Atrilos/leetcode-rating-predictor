@@ -29,11 +29,8 @@ open class Participant {
     open var finishTime: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumns(
-        JoinColumn(name = "contest_name", referencedColumnName = "contest_name"),
-        JoinColumn(name = "page_num", referencedColumnName = "page_num")
-    )
-    open var totalRank: ParticipantsWithCount? = null
+    @JoinColumn(name = "contest_name")
+    open var contest: Contest? = null
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
