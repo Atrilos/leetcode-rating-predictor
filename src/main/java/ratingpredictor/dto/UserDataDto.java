@@ -1,14 +1,15 @@
 package ratingpredictor.dto;
 
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
 
 import java.io.Serializable;
 
-@Value
+@Data
 @Builder
 public class UserDataDto implements Serializable {
     String username;
     Double currentRating;
+    Double expectedRating;
     Integer attendedContestsCount;
 }

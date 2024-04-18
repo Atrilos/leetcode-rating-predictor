@@ -29,7 +29,7 @@ open class Participant {
     open var finishTime: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "contest_name")
+    @JoinColumn(name = "contest_id")
     open var contest: Contest? = null
 
     override fun equals(other: Any?): Boolean {

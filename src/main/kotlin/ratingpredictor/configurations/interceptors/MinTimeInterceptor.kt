@@ -17,16 +17,17 @@ class MinTimeInterceptor(private val minTime: Long) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val currentTime = System.nanoTime()
-        val minTimeMillis = minTime * 1_000_000
+        val currentTime = System.currentTimeMillis()
 
-        if (currentTime - lastRequestTime < minTimeMillis) {
-            val delay = minTimeMillis - (currentTime - lastRequestTime)
-            Thread.sleep(delay)
-            log.trace("Delaying call by ${delay / 1_000_000} ms")
+        synchronized(this) {
+            if (currentTime - lastRequestTime < minTime) {
+                val delay = minTime - (currentTime - lastRequestTime)
+                Thread.sleep(delay)
+                log.trace("Delaying call by $delay ms")
+            }
+            lastRequestTime = currentTime
         }
 
-        lastRequestTime = currentTime
 
         return chain.proceed(request)
     }

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class MapperConfiguration {
 
-    @Bean
+
     fun modelMapper(): ModelMapper {
         val mapper = ModelMapper()
         addAllMappings(mapper)

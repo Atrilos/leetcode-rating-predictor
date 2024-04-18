@@ -9,7 +9,7 @@ plugins {
     id("io.freefair.lombok") version "8.1.0"
 }
 
-group = "org.atrilos"
+group = "ratingpredictor"
 version = "0.0.1-SNAPSHOT"
 
 java {
@@ -39,12 +39,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.modelmapper:modelmapper:3.2.0")
-    compileOnly("com.squareup.okhttp3:okhttp-urlconnection:4.12.0")
-    compileOnly("org.projectlombok:lombok:1.18.30")
+    implementation("com.google.guava:guava:33.1.0-jre")
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:4.12.0")
+    compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")

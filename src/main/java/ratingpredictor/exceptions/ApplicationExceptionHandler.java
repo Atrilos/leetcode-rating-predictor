@@ -27,4 +27,10 @@ public class ApplicationExceptionHandler {
                                                HttpServletResponse response) throws IOException {
         response.sendError(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
     }
+
+    @ExceptionHandler(WrongRegionException.class)
+    public void handleWrongRegionException(WrongRegionException ex,
+                                               HttpServletResponse response) throws IOException {
+        response.sendError(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
+    }
 }
